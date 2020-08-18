@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <title th:text="#{product.add.title}">Add Product</title>
+     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+     <h1 th:text="#{product.add.title}"></h1>
+     <form th:action="@{/product/add}" method="post" th:object="${productForm}">
+        <table>
+           <tr>
+              <td th:text="#{product.id}">ID</td>
+              <!-- 添加错误提示 <span th:errors="*{code}">Code is required</span> -->
+              <td><input type="text" th:field="*{code}"><span th:errors="*{code}">Code is required</span></td>
+           </tr>
+           <tr>
+               <td th:text="#{product.name}">Name</td>
+               <td><input type="text" th:field="*{name}"><span th:errors="*{name}">Name is required</span></td>
+           </tr>
+           <tr>
+               <td th:text="#{product.summary}">Summary</td>
+               <td><textarea th:field="*{summary}"></textarea><span th:errors="*{summary}">Summary is required</span></td>
+               
+           </tr>
+           <tr>
+               <td th:text="#{product.description}">Description</td>
+               <td><textarea cols="30" rows="10" th:field="*{description}"></textarea><span th:errors="*{description}">Description is required</span></textarea></td>
+           </tr>
+           <tr>
+               <td colspan="2"><input type="submit" th:value="#{submit.text}"></td>
+           </tr>
+        </table>
+     </form>
+</body>
+</html>

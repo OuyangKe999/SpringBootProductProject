@@ -1,0 +1,16 @@
+spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+  devtools:    restart:      enabled: true
+      additional-paths: src/main/java      
+  datasource:
+    url: jdbc:mysql://localhost:3306/springbootproduct?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  messages:
+    basename: i18n/message
+    encoding: UTF-8
+ 
+    
