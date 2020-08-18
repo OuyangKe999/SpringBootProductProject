@@ -32,6 +32,8 @@ public class ProductController {
 		return "product/add";
 	}
 	
+	//测试
+	
 	@PostMapping("add")
 	//表单验证需要加@Valid、因为需要知道结果所以需要加BindingResult
 	public String submitAddProduct(@Valid @ModelAttribute ProductForm productForm,BindingResult bindingResult, ModelMap model) {
